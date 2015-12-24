@@ -87,7 +87,7 @@ valid_y <- y[-inTrain];
 
 ```
 
-Since there are still a relatively large number of predictor variables and I was not expert in the nature of these predictors, I used a correlation matrix to remove redundant variables.  As before, the same process must be applied to the testing dataset.
+There are still a relatively large number of predictor variables even after removing the variables with NAs and I had not real idea how to interpret them.  I therefore used a correlation matrix to remove redundant variables.  As before, the same process must be applied to the testing dataset.
 
 ```{r}
 corr.mat <- cor(train_x)
