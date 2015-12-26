@@ -43,7 +43,7 @@ The training dataset had `r dim(train.dat)[1]` rows and `r dim(train.dat)[2]` co
 The testing dataset had `r dim(test.dat)[1]` rows and `r dim(test.dat)[2]` columns.
 
 
-An examination of the datasets showed a large number of variables which had NAs or missing values.  This was notably the case for the testing dataset and therefore indicated that any information for these variables on the training dataset would not be usable.  The new_window variable was also equal to "no" on all twenty of the test dataset observations.  Accordingly, the first step in the data preparation was to remove variables and observations from the training dataset that would not be usable for the test.  Note that anything that was done to the training dataset also needed to be applied to the test dataset.
+An examination of the datasets showed a large number of variables which had NAs or missing values.  This was notably the case for the testing dataset and therefore indicated that any information for these variables on the training dataset would not be usable.  The new_window variable was also equal to "no" on all twenty of the test dataset observations.  Accordingly, the first step in the data preparation was to remove variables and observations from the training dataset that would not be usable for the test, that is the columns with NAs and the rows with new windown equal to "yes".  Note that anything that was done to the training dataset also needed to be applied to the test dataset.
 
 ```{r}
 rem.col <- as.vector(apply(test.dat[1,], 2,is.na))
